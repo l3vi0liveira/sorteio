@@ -2,11 +2,9 @@ const express = require("express");
 
 const router = express.Router();
 
-const controllerSort = require("../controller/webhook");
+const controllerSort = require("../controller/sort");
 
-router.post("/sort/create", controllerSort.create);
-router.get("/sort/show", controllerSort.show);
-router.put("/sort/update/:sortId", controllerSort.update);
-router.delete("/sort/delete/:sortId", controllerSort.delete);
+router.post("/sort", controllerSort.create);
+router.get("/sort", controllerSort.index);
 
 module.exports = router;

@@ -7,22 +7,6 @@ module.exports = (sequelize, DataTypes) => {
         autoIncrement: true,
         primaryKey: true,
       },
-      contactId: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
-        references: {
-          key: "id",
-          model: "contacts",
-        },
-      },
-      prizeId: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
-        references: {
-          key: "id",
-          model: "prizes",
-        },
-      },
       createdAt: DataTypes.DATE,
       updatedAt: DataTypes.DATE,
     },
@@ -30,14 +14,16 @@ module.exports = (sequelize, DataTypes) => {
       tableName: "sort",
     }
   );
+
   Sort.associate = (models) => {
-    Sort.belongsTo(models.Contacts, {
-      foreignKey: "contactId",
-      as: "contacts",
-    });
     Sort.belongsTo(models.Prizes, {
       foreignKey: "prizeId",
       as: "prizes",
+    });
+
+    Sort.belongsTo(models.Contacts, {
+      foreignKey: "contactId",
+      as: "contacts",
     });
   };
   return Sort;

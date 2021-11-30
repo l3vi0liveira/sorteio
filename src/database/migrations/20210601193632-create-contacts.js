@@ -8,6 +8,7 @@ module.exports = {
         autoIncrement: true,
         primaryKey: true,
       },
+      idFromService: Sequelize.STRING,
       name: Sequelize.STRING,
       phone: Sequelize.STRING,
       status: Sequelize.STRING,

@@ -18,10 +18,10 @@ module.exports = (sequelize, DataTypes) => {
     }
   );
   Prizes.associate = (models) => {
-    Prizes.hasOne(models.Sort, {
-      foreignKey: "priseId",
-      as: "sort",
-    });
+    // Prizes.hasOne(models.Sort, {
+    //   foreignKey: "id",
+    //   as: "sort",
+    // });
   };
   return Prizes;
 };
