@@ -7,6 +7,7 @@ module.exports = (sequelize, DataTypes) => {
         autoIncrement: true,
         primaryKey: true,
       },
+      idFromService: DataTypes.STRING,
       name: DataTypes.STRING,
       phone: DataTypes.STRING,
       status: DataTypes.STRING,
@@ -19,7 +20,7 @@ module.exports = (sequelize, DataTypes) => {
   );
   Contacts.associate = (models) => {
     Contacts.hasOne(models.Sort, {
-      foreignKey: "contactId",
+      foreignKey: "id",
       as: "sort",
     });
   };

@@ -1,10 +1,9 @@
-const express = require ("express");
+const express = require("express");
 
-const router = express.Router()
+const router = express.Router();
 
-const controllerWebhook = require("../controller/sort")
+const controllerWebhook = require("../controller/webhook");
 
-router.post("/message/sendMessage/:chatId",controllerWebhook.sendMessage);
-router.get("/message/showMessage/:chatId",controllerWebhook.showMessage);
+router.post("/webhook-digisac", controllerWebhook.webhookDigisac);
 
-module.exports = router ;
+module.exports = router;
