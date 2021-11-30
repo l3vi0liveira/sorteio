@@ -9,7 +9,6 @@ module.exports = {
         primaryKey: true,
       },
       name: Sequelize.STRING,
-      image: Sequelize.STRING,
       status: Sequelize.STRING,
       createdAt: Sequelize.DATE,
       updatedAt: Sequelize.DATE,
