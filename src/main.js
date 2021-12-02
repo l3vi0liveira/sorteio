@@ -20,6 +20,6 @@ app.use(
   express.static(path.resolve(__dirname, "..", "tmp", "uploads"))
 );
 
-app.listen(3312, () => {
-  console.log("Server online in port: 3312");
+app.listen(3333, () => {
+  console.log("Server online in port: 3333");
 });

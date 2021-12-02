@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon src/main.js"
+    "dev": "nodemon src/main.js",
+    "build": "babel src -d dist",
+    "start": "node dist/main.js"
   },
   "license": "MIT",
   "dependencies": {
@@ -32,6 +34,9 @@
     "validator": "^13.6.0"
   },
   "devDependencies": {
+    "@babel/cli": "^7.16.0",
+    "@babel/core": "^7.16.0",
+    "@babel/preset-env": "^7.16.4",
     "sequelize-cli": "^6.2.0"
   }
 }
