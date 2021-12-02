@@ -5,7 +5,7 @@ const tableContacts = models.Contacts;
 const tableWebhooks = models.Webhooks;
 
 const sendMessageConfirm = async (contact) => {
-  const message = "Parabéns, você já esta concorrendo ao premio.";
+  const message = `Parabéns, você já esta concorrendo ao prêmio. Seu código de sorteio é: ${contact.id}`;
 
   const url =
     "http://localhost:8080/v1/sorteio-webhook/b18f1a3d-bf90-4e00-a784-b4a0dc78484d";

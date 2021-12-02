@@ -1,6 +1,7 @@
 const models = require("../models");
 
 const tablePrize = models.Prizes;
+const tableFiles = models.Files;
 
 exports.index = async (req, res) => {
   try {
@@ -12,10 +13,14 @@ exports.index = async (req, res) => {
   }
 };
 exports.create = async (req, res) => {
-  const { body } = req;
+  const { body, file } = req;
 
   try {
-    const response = await tablePrize.create(body);
+    const response = await tablePrize.create({
+      ...body,
+      status: "awating_raffle",
+      url: file && `http://localhost:3312/files/${file.filename}`,
+    });
 
     return res.json(response);
   } catch (error) {

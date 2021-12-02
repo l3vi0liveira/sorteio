@@ -7,7 +7,7 @@ const webhookRoutes = require("./webhook");
 
 const router = Router();
 
-// router.use(contactsRoutes);
+router.use(contactsRoutes);
 router.use(prizeRoutes);
 router.use(sortRoutes);
 router.use(webhookRoutes);

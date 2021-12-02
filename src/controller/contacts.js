@@ -8,16 +8,16 @@ exports.create = async (req, res) => {
   try {
     const response = await tableContacts.create(body);
 
-    return response;
+    return res.json(response);
   } catch (error) {
     return error;
   }
 };
 exports.index = async (req, res) => {
   try {
-    const response = await tableContacts.findMany();
+    const response = await tableContacts.findAll();
 
-    return response;
+    return res.json(response);
   } catch (error) {
     return error;
   }
