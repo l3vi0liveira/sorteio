@@ -8,7 +8,7 @@ const sendMessageConfirm = async (contact) => {
   const message = `Parabéns, você já esta concorrendo ao prêmio. Seu código de sorteio é: ${contact.id}`;
 
   const url =
-    "http://localhost:8080/v1/sorteio-webhook/b18f1a3d-bf90-4e00-a784-b4a0dc78484d";
+    "http://localhost:8080/v1/sorteio-webhook/0e0628ec-04ae-4598-ae24-5037725d5a45";
 
   await axios.post(url, {
     text: message,
