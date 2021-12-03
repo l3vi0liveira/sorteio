@@ -12,10 +12,14 @@ exports.index = async (req, res) => {
   }
 };
 exports.create = async (req, res) => {
-  const { body } = req;
+  const { body, file } = req;
 
   try {
-    const response = await tablePrize.create(body);
+    const response = await tablePrize.create({
+      ...body,
+      status: "awating_raffle",
+      url: file && `http://104.131.23.234:3333/files/${file.filename}`,
+    });
 
     return res.json(response);
   } catch (error) {
