@@ -23,6 +23,10 @@ module.exports = (sequelize, DataTypes) => {
     //   foreignKey: "id",
     //   as: "sort",
     // });
+    Prizes.hasOne(models.File, {
+      foreignKey: "prizeId",
+      as: "file",
+    });
   };
   return Prizes;
 };
